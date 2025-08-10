@@ -308,10 +308,8 @@
         });
 
         // プレイボタンのクリック効果
-        document.querySelectorAll('.play-button').forEach(button => {
+        document.querySelectorAll('.play-button:not(.disabled)').forEach(button => {
             button.addEventListener('click', function(e) {
-                e.preventDefault();
-                
                 // リップル効果
                 const ripple = document.createElement('span');
                 const rect = this.getBoundingClientRect();
@@ -338,9 +336,7 @@
                     ripple.remove();
                 }, 600);
                 
-                // ここで実際のゲームリンクに遷移
-                // window.location.href = 'game-url';
-                alert('ここでゲームが起動します！\n（実際のリンクを設定してください）');
+                // 実際のリンク遷移はブラウザが自動的に処理
             });
         });
 
