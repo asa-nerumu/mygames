@@ -146,9 +146,8 @@
           0 8px 16px rgba(0,0,0,0.25);
       }
 
-      /* 育成画面ボタン / 試合画面ボタン（立体感・共通） */
-      #training button,
-      #match #matchNextBtn {
+      /* 育成画面ボタン（青色系） */
+      #training button {
         background: linear-gradient(to bottom, #DDF0FF 0%, #8AC7FF 50%, #3BA0FF 100%);
         color: #0B3A6E;
         text-shadow: 0 1px 0 rgba(255,255,255,0.85);
@@ -162,6 +161,25 @@
           inset 0 -2px 0 rgba(0,0,0,0.04),
           0 6px 0 #2B7ACC,
           0 8px 16px rgba(0,0,0,0.22);
+        transform: translateY(0);
+        transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.2s ease;
+      }
+      
+      /* 試合画面ボタン（タイトルと同じ黄色系） */
+      #match #matchNextBtn {
+        background: linear-gradient(to bottom, #FFF3A0 0%, #FFD24D 50%, #FFB300 100%);
+        color: #5A4100;
+        text-shadow: 0 1px 0 rgba(255,255,255,0.7);
+        border: 1px solid #D19500;
+        border-bottom-color: #9C6E00;
+        border-radius: 12px;
+        padding: 12px 24px;
+        font-weight: 700;
+        box-shadow:
+          inset 0 1px 0 rgba(255,255,255,0.9),
+          inset 0 -2px 0 rgba(0,0,0,0.06),
+          0 6px 0 #C58A00,
+          0 8px 16px rgba(0,0,0,0.25);
         transform: translateY(0);
         transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.2s ease;
       }
