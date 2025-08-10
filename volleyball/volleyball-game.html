@@ -149,19 +149,19 @@
       /* 育成画面ボタン / 試合画面ボタン（立体感・共通） */
       #training button,
       #match #matchNextBtn {
-        background: linear-gradient(to bottom, #FFF3A0 0%, #FFD24D 50%, #FFB300 100%);
-        color: #5A4100;
-        text-shadow: 0 1px 0 rgba(255,255,255,0.7);
-        border: 1px solid #D19500;
-        border-bottom-color: #9C6E00;
+        background: linear-gradient(to bottom, #DDF0FF 0%, #8AC7FF 50%, #3BA0FF 100%);
+        color: #0B3A6E;
+        text-shadow: 0 1px 0 rgba(255,255,255,0.85);
+        border: 1px solid #2B7ACC;
+        border-bottom-color: #1E5FA0;
         border-radius: 12px;
         padding: 12px 24px;
         font-weight: 700;
         box-shadow:
           inset 0 1px 0 rgba(255,255,255,0.9),
-          inset 0 -2px 0 rgba(0,0,0,0.06),
-          0 6px 0 #C58A00,
-          0 8px 16px rgba(0,0,0,0.25);
+          inset 0 -2px 0 rgba(0,0,0,0.04),
+          0 6px 0 #2B7ACC,
+          0 8px 16px rgba(0,0,0,0.22);
         transform: translateY(0);
         transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.2s ease;
       }
@@ -178,21 +178,17 @@
         transform: translateY(3px);
         box-shadow:
           inset 0 1px 0 rgba(255,255,255,0.9),
-          inset 0 -1px 0 rgba(0,0,0,0.06),
-          0 3px 0 #C58A00,
+          inset 0 -1px 0 rgba(0,0,0,0.04),
+          0 3px 0 #2B7ACC,
           0 4px 8px rgba(0,0,0,0.2);
       }
 
       /* 育成画面ステータス（ボタンと同じ3Dデザイン） */
-      #training .status-list {
-        list-style: none;
-        padding: 0;
-        margin: 0 auto 16px; /* 左右中央寄せ */
-        display: grid;
-        gap: 12px;
-        justify-content: center; /* 子要素を中央に */
-        justify-items: center;
-        align-items: center;
+      #training .status-row {
+        display: flex;
+        gap: 16px;
+        justify-content: center;
+        margin-bottom: 12px;
       }
 
       #training .status-item {
@@ -490,12 +486,14 @@
     <div class="layout training-layout">
       <div class="status-col">
         <div class="status-block">
-          <ul class="status-list">
-            <li class="status-item"><span class="label">名前</span><span class="value" id="playerName">たかし</span></li>
-            <li class="status-item" id="powerContainer"><span class="label">筋力</span><span class="value" id="power">10</span></li>
-            <li class="status-item" id="techContainer"><span class="label">テクニック</span><span class="value" id="tech">10</span></li>
-            <li class="status-item"><span class="label">第</span><span class="value" id="week">1</span><span class="label">週目</span></li>
-          </ul>
+          <div class="status-row">
+            <div class="status-item"><span class="label">名前</span><span class="value" id="playerName">たかし</span></div>
+            <div class="status-item"><span class="label">第</span><span class="value" id="week">1</span><span class="label">週目</span></div>
+          </div>
+          <div class="status-row">
+            <div class="status-item" id="powerContainer"><span class="label">筋力</span><span class="value" id="power">10</span></div>
+            <div class="status-item" id="techContainer"><span class="label">テクニック</span><span class="value" id="tech">10</span></div>
+          </div>
         </div>
         <div class="actions-block">
           <button onclick="train('power')">筋トレする</button>
